@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG-Interguard", "BIG-Interguard\BIG-Interguard.csproj", "{F74AABAF-8302-4D33-A10E-99E85B23D638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{31FEBFBA-1D81-4E03-B5A1-6E882E2AC680}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F74AABAF-8302-4D33-A10E-99E85B23D638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74AABAF-8302-4D33-A10E-99E85B23D638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74AABAF-8302-4D33-A10E-99E85B23D638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74AABAF-8302-4D33-A10E-99E85B23D638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FEBFBA-1D81-4E03-B5A1-6E882E2AC680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FEBFBA-1D81-4E03-B5A1-6E882E2AC680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FEBFBA-1D81-4E03-B5A1-6E882E2AC680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FEBFBA-1D81-4E03-B5A1-6E882E2AC680}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

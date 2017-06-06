@@ -1,0 +1,38 @@
+﻿@model DataModel.LoginModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+<section id="wrapper" class="new-login-register">
+    <center>
+        <div class="white-box">
+            <h3 class="box-title m-b-0">Sign In to B.I.G Admin Panel</h3>
+            <form class="form-horizontal new-lg-form" id="loginform" action="#">
+                <div class="form-group  m-t-20">
+                    <div class="col-xs-12">
+                        <label>Admin Account</label>
+                        @Html.TextBoxFor(model => model.ADMIN_ID, new {  @required = "", @class = "form-control", placeholder = "Account Admin"  })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12" style="padding-bottom:20px">
+                        <label>Password</label>
+                       @Html.PasswordFor(model => model.PASSWORD, new { @required="", @class = "form-control", placeholder = "Password"  })
+                    </div>
+                </div>
+                <span id="statusLogin" style="padding:7px;color:red"><b>@Model.STATUS</b></span>
+             
+                        <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Log In</button>
+            </form>
+        </div>
+   </center>
+</section>
+}
+
+
+
+
+
+    

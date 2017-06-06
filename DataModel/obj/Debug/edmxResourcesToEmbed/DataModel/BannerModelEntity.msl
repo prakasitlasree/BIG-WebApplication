@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="BannerEntities">
+    <EntitySetMapping Name="BIG_Banners">
+      <EntityTypeMapping TypeName="Model.BIG_Banners">
+        <MappingFragment StoreEntitySet="BIG_Banners">
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="BANNER_SUB_HEADER" ColumnName="BANNER_SUB_HEADER" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BANNER_IMG" ColumnName="BANNER_IMG" />
+          <ScalarProperty Name="BANNER_DESCRIPTION" ColumnName="BANNER_DESCRIPTION" />
+          <ScalarProperty Name="BANNER_HEADER" ColumnName="BANNER_HEADER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_Policy">
+      <EntityTypeMapping TypeName="Model.BIG_Policy">
+        <MappingFragment StoreEntitySet="BIG_Policy">
+          <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+          <ScalarProperty Name="OBLIGATION" ColumnName="OBLIGATION" />
+          <ScalarProperty Name="VISION" ColumnName="VISION" />
+          <ScalarProperty Name="POLICY" ColumnName="POLICY" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_About">
+      <EntityTypeMapping TypeName="Model.BIG_About">
+        <MappingFragment StoreEntitySet="BIG_About">
+          <ScalarProperty Name="EXECUTIVE_INFOMATION" ColumnName="EXECUTIVE_INFOMATION" />
+          <ScalarProperty Name="AUTHOR" ColumnName="AUTHOR" />
+          <ScalarProperty Name="IS_EXECUTIVE_INFO" ColumnName="IS_EXECUTIVE_INFO" />
+          <ScalarProperty Name="WHY_US" ColumnName="WHY_US" />
+          <ScalarProperty Name="WHO_WE_ARE" ColumnName="WHO_WE_ARE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_Personnel">
+      <EntityTypeMapping TypeName="Model.BIG_Personnel">
+        <MappingFragment StoreEntitySet="BIG_Personnel">
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="PERSONNEL_POSITION" ColumnName="PERSONNEL_POSITION" />
+          <ScalarProperty Name="PERSONNEL_NAME" ColumnName="PERSONNEL_NAME" />
+          <ScalarProperty Name="PERSONNEL_IMG" ColumnName="PERSONNEL_IMG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_AdminAccount">
+      <EntityTypeMapping TypeName="Model.BIG_AdminAccount">
+        <MappingFragment StoreEntitySet="BIG_AdminAccount">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_Gallery">
+      <EntityTypeMapping TypeName="Model.BIG_Gallery">
+        <MappingFragment StoreEntitySet="BIG_Gallery">
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IMG_DESC" ColumnName="IMG_DESC" />
+          <ScalarProperty Name="IMG_NAME" ColumnName="IMG_NAME" />
+          <ScalarProperty Name="GALLERY_IMG" ColumnName="GALLERY_IMG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_Services">
+      <EntityTypeMapping TypeName="Model.BIG_Services">
+        <MappingFragment StoreEntitySet="BIG_Services">
+          <ScalarProperty Name="SERVICES_DESC" ColumnName="SERVICES_DESC" />
+          <ScalarProperty Name="SERVICES_HEADER" ColumnName="SERVICES_HEADER" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIG_Customer">
+      <EntityTypeMapping TypeName="Model.BIG_Customer">
+        <MappingFragment StoreEntitySet="BIG_Customer">
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+          <ScalarProperty Name="CUSTOMER_IMG" ColumnName="CUSTOMER_IMG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

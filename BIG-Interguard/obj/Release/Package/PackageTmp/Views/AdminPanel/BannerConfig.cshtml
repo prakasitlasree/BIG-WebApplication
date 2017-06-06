@@ -1,0 +1,252 @@
+﻿@model DataModel.AdminContentModel
+@{
+    ViewBag.Title = "BannerConfig";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3 class="box-title">Banner Config </h3>
+<div class="table-responsive">
+    <a id="" href="#!" onclick="AddModal()"><span class="label label-success">Add</span></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center">Action</th>
+                <th style="text-align:center">#</th>
+                <th style="text-align:center">Banner Image (1400x450)</th>
+                <th style="text-align:center">Banner Header</th>
+                <th style="text-align:center">Banner Sub Header</th>
+                <th style="text-align:center">Banner Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.BannerList)
+            {
+                <tr>
+                    <td style="text-align:center"><a id="@item.ID-Edit" href="#!" onclick="EditModal(this.id)"><span class="label label-success">Edit</span></a>&nbsp;|&nbsp;<a id="@item.ID-Delete" href="#!" onclick="DeleteModal(this.id)"><span class="label label-danger">Delete</span></a></td>
+                    <td style="text-align:center">@item.ID</td>
+                    <td style="text-align:center"><img src="@item.BANNER_IMG" style="height:20%"></td>
+                    <td style="text-align:center">@item.BANNER_HEADER</td>
+                    <td style="text-align:center">@item.BANNER_SUB_HEADER</td>
+                    <td style="text-align:center">@item.BANNER_DESCRIPTION</td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="addModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+@using (Html.BeginForm("AddBanner", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Banner </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Header:</label>
+                    @Html.TextBoxFor(model => model.SingleBanner.BANNER_HEADER, new { @required = "", @class = "form-control", placeholder = "" })
+                    @*<input type="text" class="form-control" id="bannerHeaderAdd" placeholder="">*@
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Sub Header:</label>
+                    @Html.TextBoxFor(model => model.SingleBanner.BANNER_SUB_HEADER, new { @required = "", @class = "form-control", placeholder = "" })
+                    @*<input type="text" class="form-control" id="bannerSubHeaderAdd" placeholder="">*@
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Text:</label>
+                    @Html.TextAreaFor(model => model.SingleBanner.BANNER_DESCRIPTION, new { @required = "", @class = "form-control", placeholder = "" })
+
+                    @*<textarea class="form-control" rows="5" id="bannerTextAdd"></textarea>*@
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Image (1400x450):</label><br />
+                    <img src="" id="imgBannerAdd" style="width:100%" />
+                    @Html.TextBoxFor(model => model.BannerFile, new { type = "file", name = "Files" } )
+                    @*<input type="file" class="form-control" id="bannerUploadAdd" accept=".png,.jpg,.jpeg">*@
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" id="confirmAdd">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+}
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="editModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+@using (Html.BeginForm("EditBanner", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit </h4>
+                @Html.TextBoxFor(model => model.SingleBanner.ID, new { @id = "hiddenIDEdit", @style = "display:block;width:auto", @class = "form-control",@readonly ="" })
+                
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    
+                    <label class="control-label" for="email">Banner Header:</label>
+                    @Html.TextBoxFor(model => model.SingleBanner.BANNER_HEADER, new {@id= "bannerHeaderEdit", @required = "", @class = "form-control", placeholder = "" })
+                       
+                   
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Sub Header:</label>
+                    @Html.TextBoxFor(model => model.SingleBanner.BANNER_SUB_HEADER, new {@id= "bannerSubHeaderEdit", @required = "", @class = "form-control", placeholder = "" })
+             
+                    
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Text:</label>
+                    @Html.TextAreaFor(model => model.SingleBanner.BANNER_DESCRIPTION, new {@id= "bannerTextEdit", @required = "", @class = "form-control", placeholder = "" })
+                    
+                  
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Banner Image (1400x450):</label><br />
+                    <img src="" id="imgBannerEdit" style="width:100%" />
+                    @Html.TextBoxFor(model => model.BannerFile, new { id= "bannerUploadEdit", type = "file", name = "Files" })
+                   
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" id="confirmEdit">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+}
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <form id="deleteForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete</h4><p id="hiddenIDDelete" style="display:block"></p>
+                </div>
+                <div class="modal-body">
+                    <p>Confirm to delete ?</p><br />
+                    <input type="text" class="form-control" style="text-align:center;width:auto" id="deleteId" readonly />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="confirmDelete" onclick="DeleteBanner()">Ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script>
+    function EditModal(id) {
+        var realID = id.split('-')[0];
+        var objRaw= @Html.Raw(Json.Encode(Model.BannerList));
+        for(var i =0;i<objRaw.length;i++){
+            if(objRaw[i].ID == realID){
+                $("#hiddenIDEdit").val(realID);
+                $("#bannerHeaderEdit").val(objRaw[i].BANNER_HEADER == null ? "" : objRaw[i].BANNER_HEADER.trim());
+                $("#bannerSubHeaderEdit").val(objRaw[i].BANNER_SUB_HEADER == null ? "" : objRaw[i].BANNER_SUB_HEADER.trim());
+                $("#bannerTextEdit").val(objRaw[i].BANNER_DESCRIPTION == null ? "" : objRaw[i].BANNER_DESCRIPTION.trim());
+                $("#imgBannerEdit").attr("src",objRaw[i].BANNER_IMG)
+                $("#editModal").modal();
+           
+            }
+
+        }
+    }
+        
+        function AddModal() {
+            $("#addModal").modal();
+        }
+        function DeleteModal(id){
+           
+            $("#hiddenIDDelete").text(id);
+            $("#deleteId").val(id.split('-')[0]);
+            $("#deleteModal").modal();
+            
+
+        }
+
+        function AddBanner(){
+
+
+            var data = {
+                SingleBanner: {
+                    ID : "",
+                    BANNER_IMG : $('#bannerUploadAdd').val(),
+                    BANNER_HEADER : $('#bannerHeaderAdd').val(),
+                    BANNER_SUB_HEADER : $("#bannerSubHeaderAdd").val(),
+                    BANNER_DESCRIPTION : $("#bannerTextAdd").val(),
+                    IS_ACTIVE:"Y"
+                }
+
+
+            }
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: '@Url.Action("AddBanner", "AdminPanel")',
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function(json) {
+                    if (json.STATUS) {
+                        $('#AddModal').modal('hide');
+                        location.reload();
+                    } else {
+                        alert(json.MESSAGE);
+                    }
+                }
+            });
+        }
+
+
+        function DeleteBanner(){
+            var idDelete = $('#deleteId').val();
+            var data = {
+                SingleBanner: {
+                    ID : idDelete
+                }
+               
+            };
+          
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: '@Url.Action("DeleteBanner", "AdminPanel")',
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function(json) {
+                    if (json.STATUS) {
+                        $('#deleteModal').modal('hide');
+                        location.reload();
+                    } else {
+                        alert(json.MESSAGE);
+                    }
+                }
+            });
+        }
+
+   
+
+
+
+    
+
+</script>
+  

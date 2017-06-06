@@ -1,0 +1,234 @@
+﻿@model DataModel.AdminContentModel
+@{
+    ViewBag.Title = "PersonalConfig";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="box-title">Personal Pictures Config</h3>
+<div class="table-responsive">
+    <a id="" href="#" onclick="AddModal()"><span class="label label-success">Add</span></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center">Action</th>
+                <th style="text-align:center">#</th>
+                <th style="text-align:center">Person Image (226x226)</th>
+                <th style="text-align:center">Name</th>
+                <th style="text-align:center">Position</th>
+                <th style="text-align:center">Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PersonnelList)
+            {
+                <tr>
+                    <td style="text-align:center"><a id="@item.ID-Edit" href="#" onclick="EditModal(this.id)"><span class="label label-success">Edit</span></a>&nbsp;|&nbsp;<a id="@item.ID-Delete" href="#" onclick="DeleteModal(this.id)"><span class="label label-danger">Delete</span></a></td>
+                    <td style="text-align:center">@item.ID</td>
+                    <td style="text-align:center"><img src="@item.PERSONNEL_IMG" style="height:100%"></td>
+                    <td style="text-align:center">@item.PERSONNEL_NAME</td>
+                    <td style="text-align:center">@item.PERSONNEL_POSITION</td>
+                    <td style="text-align:center">@item.IS_ACTIVE</td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="addModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("AddPerson", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Person </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label" for="email">Person Name:</label>
+                        @Html.TextBoxFor(model => model.SinglePerson.PERSONNEL_NAME, new { @required = "", @class = "form-control", placeholder = "" })
+               
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Person Position:</label>
+                        @Html.TextBoxFor(model => model.SinglePerson.PERSONNEL_POSITION, new { @required = "", @class = "form-control", placeholder = "" })
+                      
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Active:</label>
+                        @{
+                            var listItems = new List<SelectListItem>()
+                            {
+                            new SelectListItem {Text = "Yes",   Value = "Y"},
+                            new SelectListItem {Text = "No", Value = "N"}
+                            };
+
+                            @Html.DropDownListFor(model => model.SinglePerson.IS_ACTIVE, listItems, string.Empty, new { @class = "form-control" })
+                        }
+
+                       
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Person Image (226x226): </label><br />
+                        <img src="" id="ImgPersonAdd" style="width:50%" />
+                        @Html.TextBoxFor(model => model.PersonFile, new { type = "file", name = "Files" })
+                    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" id="confirmAdd">Ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="editModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("EditPerson", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit </h4>
+                    @Html.TextBoxFor(model => model.SinglePerson.ID, new { @id = "hiddenIDEdit", @style = "display:block;width:auto", @class = "form-control", @readonly = "" })
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label" for="email">Person Name:</label>
+                        @Html.TextBoxFor(model => model.SinglePerson.PERSONNEL_NAME, new { @id = "personNameEdit", @required = "", @class = "form-control", placeholder = "" })
+                  
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Person Position:</label>
+                        @Html.TextBoxFor(model => model.SinglePerson.PERSONNEL_POSITION, new { @id = "personPositionEdit", @required = "", @class = "form-control", placeholder = "" })
+                    
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Active:</label>
+                        @{
+                            var listItems = new List<SelectListItem>()
+                            {
+                            new SelectListItem {Text = "Yes",   Value = "Y"},
+                            new SelectListItem {Text = "No", Value = "N"}
+                            };
+
+                            @Html.DropDownListFor(model => model.SinglePerson.IS_ACTIVE, listItems, string.Empty, new { @class = "form-control", @id = "personActiveEdit" })
+                        }
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="email">Person Image (226x226):</label><br />
+                        <img src="" id="imgPersonEdit" style="width:50%" />
+                        @Html.TextBoxFor(model => model.PersonFile, new { type = "file", name = "Files" })
+                   
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" id="confirmEdit">Ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                            }
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="deleteForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete</h4><p id="hiddenIDDelete" style="display:block"></p>
+                </div>
+                <div class="modal-body">
+                    <p>Confirm to delete ?</p><br />
+                    <input type="text" class="form-control" style="text-align:center;width:auto" id="deleteId" readonly />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="confirmDelete" onclick="DeleteBanner()">Ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script>
+    function EditModal(id) {
+        var realID = id.split('-')[0];
+        var objRaw= @Html.Raw(Json.Encode(Model.PersonnelList));
+        for(var i =0;i<objRaw.length;i++){
+            if(objRaw[i].ID == realID){
+                $("#hiddenIDEdit").val(realID);
+                $("#personNameEdit").val(objRaw[i].PERSONNEL_NAME == null ? "" : objRaw[i].PERSONNEL_NAME.trim());
+                $("#personPositionEdit").val(objRaw[i].PERSONNEL_POSITION == null ? "" : objRaw[i].PERSONNEL_POSITION.trim());
+                $("#personActiveEdit").val(objRaw[i].IS_ACTIVE == null ? "" : objRaw[i].IS_ACTIVE.trim());
+                $("#imgPersonEdit").attr("src",objRaw[i].PERSONNEL_IMG)
+                $("#editModal").modal();
+
+            }
+
+        }
+    }
+
+    function AddModal() {
+        $("#addModal").modal();
+    }
+    function DeleteModal(id){
+
+        $("#hiddenIDDelete").text(id);
+        $("#deleteId").val(id.split('-')[0]);
+        $("#deleteModal").modal();
+
+
+    }
+
+  
+
+
+    function DeleteBanner(){
+        var idDelete = $('#deleteId').val();
+        var data = {
+            SinglePerson: {
+                ID : idDelete
+            }
+
+        };
+
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("DeletePerson", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#deleteModal').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+
+</script>
+

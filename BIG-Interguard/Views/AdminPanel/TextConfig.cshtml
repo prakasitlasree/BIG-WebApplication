@@ -1,0 +1,564 @@
+﻿@model DataModel.AdminContentModel
+@{
+    ViewBag.Title = "TextConfig";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="box-title">(Policy)</h3>
+<div class="table-responsive">
+    <a id="" href="#!" onclick="EditModalPolicy()"><span class="label label-success">Edit</span></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center">Text</th>
+                <th style="text-align:center">Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:center"><b>Policy (นโยบาย)</b></td>
+                <td style="text-align:left">@Model.Policy.POLICY</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><b>Vision (วิสัยทัศน์)</b></td>
+                <td style="text-align:left">@Model.Policy.VISION</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><b>Obligation (พันธกิจ)</b></td>
+                <td style="text-align:left">@Model.Policy.OBLIGATION</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><b>New & Activity (ข่าวสารและกิจกรรม)</b></td>
+                <td style="text-align:left">@Model.Policy.ACTIVITY</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+<h3 class="box-title">(About Us)</h3>
+<div class="table-responsive">
+    <a id="" href="#!" onclick="EditModalAbout()"><span class="label label-success">Edit</span></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center;width:20%">Text</th>
+                <th style="text-align:center">Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:center;width:auto"><b>Who We Are? (เราคือใคร)</b></td>
+                <td style="text-align:left">@Model.AboutUS.WHO_WE_ARE</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><b>Why Us? (ทำไมต้องเลือกเรา)</b></td>
+                @{
+                    string[] whyUs = @Model.AboutUS.WHY_US.Split(',');
+
+                }
+                <td style="text-align:left">
+                    @foreach (var item in whyUs)
+                    {
+                        @item
+                        <br />
+                    }
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<hr>
+<h3 class="box-title">(Information from Executive)</h3>
+<div class="table-responsive">
+    <a id="" href="#!" onclick="AddModal()"><span class="label label-success">Add</span></a>
+    <table class="table">
+        <thead>
+            <tr>
+              
+                <th style="text-align:center">Action</th>
+                <th style="text-align:center">#</th>
+                <th style="text-align:center">Information</th>
+                <th style="text-align:center">Author</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ExeInfoList)
+            {
+                <tr>
+                
+                    <td style="text-align:center"><a id="@item.ID-Edit" href="#!" onclick="EditModalExeInfo(this.id)"><span class="label label-success">Edit</span></a>&nbsp;|&nbsp;<a id="@item.ID-Delete" href="#!" onclick="DeleteModal(this.id)"><span class="label label-danger">Delete</span></a></td>
+                    <td style="text-align:center">@item.ID</td>
+                    <td style="text-align:left">@item.TEXT_INFO</td>
+                    <td style="text-align:center">@item.AUTHOR</td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+</div>
+<hr>
+<h3 class="box-title">(Services)</h3>
+<div class="table-responsive">
+    <a id="" href="#!" onclick="EditModalServices()"><span class="label label-success">Edit</span></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center;width:20%">Services</th>
+                <th style="text-align:center">Services Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ServicesList)
+            {
+                <tr>
+                   
+                    <td style="text-align:center"><b>@item.SERVICES_HEADER</b></td>
+                    <td style="text-align:left">@item.SERVICES_DESC</td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="editModalPolicy" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit </h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="" class="control-label">Policy:</label>
+                    <textarea id="PolicyEdit" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Vision:</label>
+                    <textarea id="VisionEdit" class="form-control" rows="4" cols="50"></textarea>
+
+
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Obligation:</label>
+                    <textarea id="ObligationEdit" class="form-control" rows="4" cols="50"></textarea>
+
+                </div>
+
+                <div class="form-group">
+                    <label id="" class="control-label">Acivity:</label>
+                    <textarea id="ActivityEdit" class="form-control" rows="4" cols="50"></textarea>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" id="confirmEdit" onclick="EditPolicy()">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="editModalAbout" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit </h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="" class="control-label">Who We Are?:</label>
+                    <textarea id="whoAreWeEdit" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Why Us?: (Please use ',' to split)</label>
+                    <textarea id="whyUsEdit" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" id="confirmEdit" onclick="EditAbout()">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="addModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Information</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="" class="control-label">Information:</label>
+                    <textarea id="InformationAdd" class="form-control" rows="6" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Author:</label>
+                    <input id="AuthorAdd" class="form-control" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="confirmEdit" onclick="AddInformation()">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="editModalExeInfo" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit </h4><input type="text" id="hideIDEdit" class="form-control" readonly="" style="display:block;width:auto;text-align:center">
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="" class="control-label">Information:</label>
+                    <textarea id="InformationEdit" class="form-control" rows="6" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Author:</label>
+                    <input id="AuthorEdit" class="form-control" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="confirmEdit" onclick="EditInformation()">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="deleteExeInfoModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="deleteForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete</h4><p id="hiddenIDDelete" style="display:block"></p>
+                </div>
+                <div class="modal-body">
+                    <p>Confirm to delete ?</p><br />
+                    <input type="text" class="form-control" style="text-align:center;width:auto" id="deleteId" readonly />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="confirmDelete" onclick="DeleteExeInfo()">Ok</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="EditModalServices" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit </h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="" class="control-label">Services 1st block:</label>
+                    <input type="text" class="form-control" id="Service1HeadEdit"  />
+                    <textarea id="Service1DescEdit" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Services 2nd block:</label>
+                    <input type="text" class="form-control" id="Service2HeadEdit" />
+                    <textarea id="Service2DescEdit" class="form-control" rows="4" cols="50"></textarea>
+
+
+                </div>
+                <div class="form-group">
+                    <label id="" class="control-label">Services 3rd block:</label>
+                    <input type="text" class="form-control" id="Service3HeadEdit" />
+                    <textarea id="Service3DescEdit" class="form-control" rows="4" cols="50"></textarea>
+
+                </div>
+
+                <div class="form-group">
+                    <label id="" class="control-label">Services 4th block:</label>
+                    <input type="text" class="form-control" id="Service4HeadEdit" />
+                    <textarea id="Service4DescEdit" class="form-control" rows="4" cols="50"></textarea>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="confirmEdit" onclick="EditServices()">Ok</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    function EditModalPolicy() {
+        var objRaw= @Html.Raw(Json.Encode(Model.Policy));
+        $("#PolicyEdit").val(objRaw.POLICY == null ? "" : objRaw.POLICY.trim());
+        $("#ObligationEdit").val(objRaw.OBLIGATION == null ? "" : objRaw.OBLIGATION.trim());
+        $("#VisionEdit").val(objRaw.VISION == null ? "" : objRaw.VISION.trim());
+        $("#ActivityEdit").val(objRaw.ACTIVITY == null ? "" : objRaw.ACTIVITY.trim());
+        $("#editModalPolicy").modal();
+
+    }
+    function EditPolicy(){
+        var data = {
+            Policy:{
+                POLICY:$('#PolicyEdit').val(),
+                VISION:$('#VisionEdit').val(),
+                OBLIGATION:$('#ObligationEdit').val(),
+                ACTIVITY:$('#ActivityEdit').val()
+            }
+
+        }
+
+
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("PolicyEdit", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#editModalPolicy').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+    }
+
+    function EditModalAbout() {
+        var objRaw= @Html.Raw(Json.Encode(Model.AboutUS));
+        $("#whoAreWeEdit").val(objRaw.WHO_WE_ARE == null ? "" : objRaw.WHO_WE_ARE.trim());
+        $("#whyUsEdit").val(objRaw.WHY_US == null ? "" : objRaw.WHY_US.trim());
+        $("#editModalAbout").modal();
+
+    }
+    function EditAbout(){
+        var data = {
+            AboutUS:{
+                WHO_WE_ARE:$('#whoAreWeEdit').val(),
+                WHY_US:$('#whyUsEdit').val()
+
+            }
+
+        }
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("AboutEdit", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#editModalPolicy').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+    }
+
+
+
+
+    function AddModal() {
+        $("#addModal").modal();
+    }
+    function DeleteModal(id){
+
+        $("#hiddenIDDelete").text(id);
+        $("#deleteId").val(id.split('-')[0]);
+        $("#deleteExeInfoModal").modal();
+
+
+    }
+
+    function DeleteExeInfo(){
+        var idDelete = $('#deleteId').val();
+        var data = {
+            AboutUS: {
+                ID : idDelete
+            }
+
+        };
+
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("ExeInfoDelete", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#deleteExeInfoModal').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+    }
+    function AddInformation(){
+        var data = {
+            AboutUS: {
+                EXECUTIVE_INFOMATION:$('#InformationAdd').val(),
+                AUTHOR:$('#AuthorAdd').val(),
+                IS_EXECUTIVE_INFO:'Y',
+            }
+
+        };
+
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("ExeInfoAdd", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#addModal').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+
+    }
+
+
+
+    function EditModalExeInfo(id) {
+        var realID = id.split('-')[0];
+        var objRaw= @Html.Raw(Json.Encode(Model.ExeInfoList));
+        for(var i =0;i<objRaw.length;i++){
+            if(objRaw[i].ID == realID){
+                $("#hideIDEdit").val(realID);
+                $("#InformationEdit").val(objRaw[i].TEXT_INFO == null ? "" : objRaw[i].TEXT_INFO.trim());
+                $("#AuthorEdit").val(objRaw[i].AUTHOR == null ? "" : objRaw[i].AUTHOR.trim());
+                $("#editModalExeInfo").modal();
+
+            }
+
+        }
+    }
+    function EditInformation(){
+        var data = {
+            AboutUS:{
+                EXECUTIVE_INFOMATION:$('#InformationEdit').val(),
+                AUTHOR:$('#AuthorEdit').val(),
+                IS_EXECUTIVE_INFO:'Y',
+                ID:$('#hideIDEdit').val()
+
+            }
+
+        }
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("ExeInfoEdit", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#editModalExeInfo').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+    }
+
+
+    function EditModalServices() {
+        var objRaw= @Html.Raw(Json.Encode(Model.ServicesList));
+        $("#Service1HeadEdit").val(objRaw[0].SERVICES_HEADER == null ? "" : objRaw[0].SERVICES_HEADER.trim());
+        $("#Service1DescEdit").val(objRaw[0].SERVICES_DESC == null ? "" : objRaw[0].SERVICES_DESC.trim());
+        $("#Service2HeadEdit").val(objRaw[1].SERVICES_HEADER == null ? "" : objRaw[1].SERVICES_HEADER.trim());
+        $("#Service2DescEdit").val(objRaw[1].SERVICES_DESC == null ? "" : objRaw[1].SERVICES_DESC.trim());
+        $("#Service3HeadEdit").val(objRaw[2].SERVICES_HEADER == null ? "" : objRaw[2].SERVICES_HEADER.trim());
+        $("#Service3DescEdit").val(objRaw[2].SERVICES_DESC == null ? "" : objRaw[2].SERVICES_DESC.trim());
+        $("#Service4HeadEdit").val(objRaw[3].SERVICES_HEADER == null ? "" : objRaw[3].SERVICES_HEADER.trim());
+        $("#Service4DescEdit").val(objRaw[3].SERVICES_DESC == null ? "" : objRaw[3].SERVICES_DESC.trim());
+        $("#EditModalServices").modal();
+
+    }
+    function EditServices(){
+        var data = [{
+            SERVICES_HEADER:$('#Service1HeadEdit').val(),
+            SERVICES_DESC:$('#Service1DescEdit').val(),
+            ID:'1'
+        },{
+            SERVICES_HEADER:$('#Service2HeadEdit').val(),
+            SERVICES_DESC:$('#Service2DescEdit').val(),
+            ID:'2'
+        },{
+            SERVICES_HEADER:$('#Service3HeadEdit').val(),
+            SERVICES_DESC:$('#Service3DescEdit').val(),
+            ID:'3'
+        },{
+            SERVICES_HEADER:$('#Service4HeadEdit').val(),
+            SERVICES_DESC:$('#Service4DescEdit').val(),
+            ID:'4'
+        }]
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '@Url.Action("ServicesEdit", "AdminPanel")',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(json) {
+                if (json.STATUS) {
+                    $('#EditModalServices').modal('hide');
+                    location.reload();
+                } else {
+                    alert(json.MESSAGE);
+                }
+            }
+        });
+    }
+
+
+
+
+
+</script>
+
+
+

@@ -1,0 +1,638 @@
+﻿@model DataModel.IndexContentModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="allcotent" style="display:none">
+<div class="banner">
+    <script>
+        $(function () {
+
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks"
+            });
+
+        });
+    </script>
+    <!-- responsiveslides -->
+    <div id="top" class="callbacks_container">
+        <ul class="rslides" id="slider3">
+            @foreach (var item in Model.BannerList)
+            {
+                <li>
+                    <div class="banner">
+                        <div class="imageBanner">
+
+                            <img src="@item.BANNER_IMG" class="banner" alt="" />
+
+                            <h2 style="background-color:rgba(255, 255, 255, 0.4);line-height: 30px;padding:10px;color:white;text-shadow: 2px 2px #808080;" class="imageBanner"><b>@item.BANNER_HEADER</b><br />@item.BANNER_SUB_HEADER<br /><i style="font-size:13px">@item.BANNER_DESCRIPTION</i> </h2>
+
+                        </div>
+                    </div>
+
+                </li>
+
+
+
+            }
+
+        </ul>
+    </div>
+
+</div>
+<!-- //banner -->
+<!-- banner-bottom -->
+<a id="floatBtn" href="#pricing"><div class="stuck"><img style="width:100%" src="~/Content/Image/icon-btn.png" /></div></a>
+<script type="text/javascript">
+    $("#floatBtn").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#pricing").offset().top
+        }, 2000);
+    });
+    </script>
+
+
+<div class="new-bottom">
+    <div class="container">
+        <div class="bottom-grids">
+            <div class="col-md-3 bottom-grid">
+                <div class="bottom-left">
+                    <div class="new"></div>
+                </div>
+                <div class="bottom-right">
+                    <h3>นโยบาย </h3>
+                    <p>@Model.Policy.POLICY</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 bottom-grid">
+                <div class="bottom-left">
+                    <div class="fresh"></div>
+                </div>
+                <div class="bottom-right">
+                    <h3>วิสัยทัศน์</h3>
+                    <p>@Model.Policy.VISION</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 bottom-grid">
+                <div class="bottom-left">
+                    <div class="strong"></div>
+                </div>
+                <div class="bottom-right">
+                    <h3>พันธกิจ</h3>
+                    <p>@Model.Policy.OBLIGATION</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 bottom-grid">
+                <div class="bottom-left">
+                    <div class="great"></div>
+                </div>
+                <div class="bottom-right">
+                    <h3>New & Activity</h3>
+                    <p>@Model.Policy.ACTIVITY</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- //banner-bottom -->
+<!-- about -->
+<div id="about" class="about">
+    <div class="container">
+        <div class="about-header">
+            <h2>เกี่ยวกับเรา</h2>
+            <a class="scroll" href="#home"><img src="~/Content/Image/1.png" alt="" /></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="about-grids">
+            <div class="col-md-4 about-grid">
+                <h3>เราคือใคร</h3>
+                <p>@Model.AboutUS.WHO_WE_ARE</p>
+            </div>
+            <div class="col-md-4 about-grid list">
+                <h3>ทำไมต้องเลือกเรา?</h3>
+                <ul>
+                    @foreach (var item in @Model.ChooseUsList)
+                    {
+                        <li>@item.TEXT</li>
+                    }
+
+                </ul>
+            </div>
+            <div class="col-md-4 about-grid">
+                <h3>สารจากผู้บริหาร</h3>
+                <div id="top" class="callbacks_container">
+                    <ul class="rslides" id="slider4">
+
+                        @foreach (var item in Model.ExeInfoList)
+                        {
+                            <li>
+                                <div class="slider-info">
+                                    <p>
+                                        @item.TEXT_INFO
+                                    </p>
+                                    @*<img src="~/Content/Image/c.png" alt="" />*@
+                                    <h4>@item.AUTHOR</h4>
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+                <!-- responsiveslides -->
+
+                <script>
+
+                    $(function () {
+
+                        $("#slider4").responsiveSlides({
+                            auto: true,
+                            pager: false,
+                            nav: true,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+
+                            },
+                            after: function () {
+
+                            }
+                        });
+                    });
+                </script>
+                <!-- responsiveslides -->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- //about -->
+<!-- team -->
+<div id="team" class="team">
+    <div class="container">
+        <div class="team-header">
+            <h2>รายนามผู้บริหาร</h2>
+        </div>
+        <div class="work-bottom">
+            @*<div class="team-grid" style="height:auto;text-align:center;background:none;padding-top:20px">
+
+                <img style="width:auto;background:white;padding:15px" src="@Model.PersonnelList[0].PERSONNEL_IMG" alt="" />
+                <h3 style="width:auto">@Model.PersonnelList[0].PERSONNEL_NAME</h3>
+                <p style="width:auto">@Model.PersonnelList[0].PERSONNEL_POSITION</p>
+
+            </div>*@
+            <center>
+                @try
+                {
+                    int count = 0;
+                    foreach (var item in Model.PersonnelList)
+                    {
+                        count++;
+                        if (count < 4 )
+                        {
+                            if(count == 5)
+                            {
+                                break;
+                            }
+                            <div style="display:inline-block;width:auto;padding:20px">
+                                <img style="width:auto;background:white;padding:15px;display:inline-block" src="@item.PERSONNEL_IMG" alt="" />
+                                <h3 style="width:auto">@item.PERSONNEL_NAME</h3>
+                                <p style="width:auto">@item.PERSONNEL_POSITION</p>
+                            </div>
+                        }
+                      
+
+                    }
+                }
+                catch { }
+
+
+                </center>
+
+
+
+                    @*<ul id="flexiselDemo1">
+                @{int count = 0; }}
+                @foreach (var item in Model.PersonnelList)
+                {
+                    count++;
+                    if (count != 1)
+                    {
+                        <li>
+                            <div class="team-grid">
+                                <img src="@item.PERSONNEL_IMG" alt="" />
+                                <h3>@item.PERSONNEL_NAME</h3>
+                                <p>@item.PERSONNEL_POSITION</p>
+                            </div>
+                        </li>
+                    }
+                }
+
+            </ul>*@
+
+
+                    <script type="text/javascript">
+                        //$(window).load(function () {
+                        //    $("#flexiselDemo1").flexisel({
+                        //        visibleItems: 3,
+                        //        animationSpeed: 1000,
+                        //        autoPlay: false,
+                        //        autoPlaySpeed: 5000,
+                        //        pauseOnHover: true,
+                        //        enableResponsiveBreakpoints: true,
+                        //        responsiveBreakpoints: {
+                        //            portrait: {
+                        //                changePoint: 480,
+                        //                visibleItems: 1
+                        //            },
+                        //            landscape: {
+                        //                changePoint: 640,
+                        //                visibleItems: 2
+                        //            },
+                        //            tablet: {
+                        //                changePoint: 768,
+                        //                visibleItems: 3
+                        //            }
+                        //        }
+                        //    });
+
+                        //});
+                    </script>
+
+</div>
+    </div>
+</div>
+<div id="gallery" class="team">
+    <div class="container">
+        <div class="team-header">
+            <h2>บุคลากร</h2>
+        </div>
+        <div class="work-bottom">
+            <ul id="galleryImage">
+
+                @foreach (var item in Model.GalleryList)
+                {
+                    <li>
+                        <div class="team-grid">
+                            <img src="@item.GALLERY_IMG" alt="" />
+                            <h3>@item.IMG_NAME</h3>
+                            <p>@item.IMG_DESC</p>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+
+
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $("#galleryImage").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 5000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //team -->
+<!-- services -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="services-header">
+            <h2>บริการของเรา</h2>
+            <a class="scroll" href="#home"><img src="~/Content/Image/1.png" alt="" /></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="services-grids">
+            @foreach (var item in Model.ServicesList)
+            {
+                <div class="col-md-3 services-grid">
+                    <h3>@item.SERVICES_HEADER</h3>
+                    <p>@item.SERVICES_DESC</p>
+                </div>
+            }
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div id="video" class="services">
+    <div class="container">
+        <div class="services-header">
+            <h2>วิดีโอ</h2>
+            <a class="scroll" href="#home"><img src="~/Content/Image/1.png" alt="" /></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="services-grids" style="padding:30px 0 30px 0">
+            <div class="col-lg-6">
+              
+                <video width="100%" controls>
+                    <source src="\Content\Video\mov_bbb.mp4" type="video/mp4">
+
+                </video>
+
+
+            </div>
+            <div class="col-lg-6">
+              
+                <video width="100%" controls>
+                    <source src="\Content\Video\mov_bbb.mp4" type="video/mp4">
+
+                </video>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- //services -->
+<div id="customer" class="services">
+    <div class="container">
+        <div class="services-header">
+            <h2>ลูกค้าของเรา</h2>
+            <a class="scroll" href="#home"><img src="~/Content/Image/1.png" alt="" /></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="work-bottom">
+            <ul class="" id="customerImg">
+
+                @foreach (var item in Model.CustomerList)
+                {
+                    <li>
+                        <div class="team-grid">
+                        
+                            <img class="" src="@item.CUSTOMER_IMG" alt="" />
+                            <h3>@item.CUSTOMER_NAME</h3>
+                            </div>
+
+                    
+                          
+                       
+                    </li>
+                }
+
+            </ul>
+
+
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $("#customerImg").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 5000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+<!-- prices -->
+<div id="pricing" class="services">
+    <div class="container">
+        <div class="services-header">
+            <h2>ขอใบเสนอราคา</h2>
+            <a class="scroll" href="#home"><img src="~/Content/Image/1.png" alt="" /></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="contact-form" style="padding:50px 0 90px 0">
+
+
+         
+                <div class="contact-left">
+                    <input type="text" id="nameCustomer" placeholder="ชื่อ" required>
+                    <input type="text" id="positionCustomer" placeholder="ตำแหน่ง" required>
+                    <input type="text" id="companyCustomer" placeholder="บริษัท" required>
+                    <input type="text" id="numberCustomer" placeholder="เบอร์ติดต่อ" required>
+                    <input type="text" id="emailCustomer" placeholder="อีเมล์" required>
+                  
+                </div>
+                <div class="contact-right">
+                    <textarea rows="8" placeholder="รายละเอียด" id="descCustomer" required></textarea>
+                </div>
+                <div class="clearfix"></div>
+                <input type="submit" id="submitEmail" onclick="sendEmail()" value="ส่ง">
+            <div style="text-align:center">
+            <img style="align-self:center;width:5%;height:5%;margin-left:36%" id="loadingSign" src="~/Content/Image/pageloader.gif" />
+                </div>
+            
+</div>
+        <div class="address" style="padding:50px 0 20px 0">
+            <h3>Hotline</h3>
+            <div style="padding-bottom:20px"><p><span style="color:indianred">034-472312</span> สำนักงานกระทุ่มแบน</div>
+            <p><span style="color:indianred">02-5714343</span> สำนักงานนนทบุรี</p>
+        </div>
+        <div class="address">
+            <h3>ฝ่ายขายและการตลาด</h3>
+            <div style="padding-bottom:20px"><p><span style="color:indianred">086-3344846</span>  คุณธนกฤต  อินทเจียด</div>
+            <div style="padding-bottom:20px">
+                <p><span style="color:indianred">086-5067767</span>  คุณสาทิส  ฤทธิ์ขำ</p>
+            </div>
+            <div style="padding-bottom:20px">
+                <p><span style="color:indianred">088-0991466</span>  คุณณัฐพร  เกตุแก้ว</p>
+            </div>
+            <div style="padding-bottom:20px">
+                <div style="display:inline-block"><img src="~/Content/Image/QR LINE KRATUMBAN.jpg" /><p style="text-align:center;padding:5px">สาขากระทุ่มแบน</p></div>
+     
+                <div style="display:inline-block"><img src="~/Content/Image/QR LINE NONTABURI.jpg" /><p style="text-align:center;padding:5px">สาขานนทบุรี</p></div>
+            
+            </div>
+                
+            </div>
+      
+        <div class="clearfix"></div>
+</div>
+<!-- //prices -->
+<!-- map -->
+
+<div class="map">
+<div class="map col-md-6">
+   
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.060585679411!2d100.26359651465688!3d13.654078503229572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2c085d8344aa9%3A0x7b8543b1593e4c87!2z4Lia4Lij4Li04Lip4Lix4LiXIOC4muC4tS7guYTguK0u4LiI4Li1LuC4reC4tOC4meC5gOC4leC4reC4o-C5jOC4geC4suC4o-C5jOC4lCDguIjguLPguIHguLHguJQ!5e0!3m2!1sth!2sth!4v1496168362898" frameborder="0" style="border:0"></iframe>
+  
+</div>
+<div class="map col-md-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3327.194180640538!2d100.40176695197829!3d13.962256906782219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xda16cd587b8e31!2z4Lia4Lij4Li04Lip4Lix4LiX4Lij4Lix4LiB4Lip4Liy4LiE4Lin4Liy4Lih4Lib4Lil4Lit4LiU4Lig4Lix4LiiIOC4muC4tS7guYTguK0u4LiI4Li1LiDguK3guLTguJnguYDguJXguK3guKPguYzguYDguIvguJ_guIHguLLguKPguYzguJQg4LiB4Lij4Li44LmK4LibIOC4iOC4s-C4geC4seC4lA!5e0!3m2!1sth!2sth!4v1496154176210" frameborder="0" style="border:0"></iframe>
+</div>
+    <div id="contact" class="contact-header">
+        <h2>ติดต่อเรา</h2>
+        <a class="scroll" href="#home"><img src="~/Content/Image/1.png" alt="" /></a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+<div style="clear:both"></div>
+<div id="" class="underMap">
+
+    <div class="container">
+ 
+            <div class="col-md-6 services-grid">
+                <h3>สาขากระทุ่มแบน</h3>
+                <p style="height:auto"><span> บริษัทรักษาความปลอดภัย  บี.ไอ.จี.อินเตอร์การ์ด  จำกัด ( สำนักงานใหญ่ ) <br /></span><label>สำนักงานเลขที่ 179/18 </label> ถนนสุคนธวิท ตำบลตลาดกระทุ่มแบน อำเภอกระทุ่มแบน สมุทรสาคร  74110</p>
+                <ul style="margin-top:30px">
+                    <li>โทรศัพท์ 0-3447-2312 </li>
+                    <li>โทรศัพท์ 0-3447-3525 </li>
+                    <li>โทรสาร  0-3484-6730 </li>
+                    <li><a style="color:blue" href="mail-to:B.I.G.-1@Hotmail.com">Email : B.I.G.-1@Hotmail.com</a>,<a style="color:blue" href="mail-to:big1@big-interguard.com">big1@big-interguard.com</a></li>
+                </ul>
+              
+
+            </div>
+            <div class="col-md-6 services-grid">
+                <h3>สาขานนทบุรี</h3>
+                <p style="height:auto"><span>บริษัทรักษาความปลอดภัย  บี.ไอ.จี. อินเตอร์ เซฟการ์ด กรุ๊ป จำกัด ( สำนักงานจังหวัดนนทบุรี ) <br /></span><label>สำนักงานเลขที่ 81 </label> หมู่ที่ 5 ตำบลละหาร อำเภอบางบัวทอง นนทบุรี 11110</p>
+                <ul style="margin-top:30px">
+                    <li>โทรศัพท์ 0-2571-4342 </li>
+                    <li>โทรศัพท์ 0-2571-4343 </li>
+                    <li>โทรสาร  0-2571-4344 </li>
+                    <li><a style="color:blue" href="mail-to:bigintersafeguard@gmail.com">Email : bigintersafeguard@gmail.com</a></li>
+                </ul>
+
+            </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+</div>
+    </div>
+
+<script>
+
+    $(document).ready(function(){
+    $('#allcotent').show();
+    $('#loadingSign').hide();
+
+        //temporary hide
+    //$('#gallery').hide();
+    $('#video').hide();
+
+
+  
+
+
+    
+    });
+
+    function sendEmail() {
+        if ($('#nameCustomer').val() != "" && $('#emailCustomer').val() != "" && $('#numberCustomer').val() != "" && $('#descCustomer').val() != "" && $('#companyCustomer').val() != "" && $('#positionCustomer').val() != "") {
+
+            $('#submitEmail').hide();
+            $('#loadingSign').show();
+            data = {
+                NAME: $('#nameCustomer').val(),
+                POSITION: $('#positionCustomer').val(),
+                COMPANY:$('#companyCustomer').val(),
+                EMAIL: $('#emailCustomer').val(),
+                NUMBER: $('#numberCustomer').val(),
+                DESC: $('#descCustomer').val()
+            };
+
+
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: '@Url.Action("SendEmailCustomer", "Home")',
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function (json) {
+                    if (json.STATUS) {
+                        alert(json.MESSAGE);
+                        $('#submitEmail').show();
+                        $('#loadingSign').hide();
+
+                        $('#nameCustomer').val('');
+                        $('#positionCustomer').val('');
+                        $('#companyCustomer').val('');
+                        $('#emailCustomer').val('');
+                       $('#numberCustomer').val('');
+                        $('#descCustomer').val('');
+
+
+                    } else {
+                        alert(json.MESSAGE);
+                        $('#submitEmail').show();
+                        $('#loadingSign').hide();
+                        $('#nameCustomer').val('');
+                        $('#positionCustomer').val('');
+                        $('#companyCustomer').val('');
+                        $('#emailCustomer').val('');
+                        $('#numberCustomer').val('');
+                        $('#descCustomer').val('');
+                    }
+                }
+            });
+
+        }
+        else {
+            alert('Please check your information before send.');
+        }
+
+
+
+
+
+    
+
+    }
+
+
+</script>
+
+
+
+
+
+
+
+

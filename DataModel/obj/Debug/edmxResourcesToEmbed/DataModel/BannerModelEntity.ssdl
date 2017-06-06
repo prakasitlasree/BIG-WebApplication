@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BIG_About">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="WHO_WE_ARE" Type="ntext" />
+    <Property Name="WHY_US" Type="ntext" />
+    <Property Name="IS_EXECUTIVE_INFO" Type="nchar" MaxLength="1" />
+    <Property Name="AUTHOR" Type="nchar" MaxLength="30" />
+    <Property Name="EXECUTIVE_INFOMATION" Type="ntext" />
+  </EntityType>
+  <EntityType Name="BIG_AdminAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ACCOUNT" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BIG_Banners">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="BANNER_IMG" Type="nvarchar" MaxLength="250" />
+    <Property Name="BANNER_DESCRIPTION" Type="nchar" MaxLength="300" />
+    <Property Name="BANNER_HEADER" Type="nchar" MaxLength="50" />
+    <Property Name="BANNER_SUB_HEADER" Type="nchar" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="BIG_Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CUSTOMER_IMG" Type="nvarchar" MaxLength="200" />
+    <Property Name="CUSTOMER_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="BIG_Gallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="GALLERY_IMG" Type="nvarchar" MaxLength="255" />
+    <Property Name="IMG_NAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="IMG_DESC" Type="nvarchar" MaxLength="255" />
+    <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="BIG_Personnel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PERSONNEL_IMG" Type="nvarchar" MaxLength="255" />
+    <Property Name="PERSONNEL_NAME" Type="nchar" MaxLength="50" />
+    <Property Name="PERSONNEL_POSITION" Type="nchar" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="BIG_Policy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="POLICY" Type="nchar" MaxLength="255" />
+    <Property Name="VISION" Type="nchar" MaxLength="255" />
+    <Property Name="OBLIGATION" Type="nchar" MaxLength="255" />
+    <Property Name="ACTIVITY" Type="nchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BIG_Services">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SERVICES_HEADER" Type="nvarchar" MaxLength="50" />
+    <Property Name="SERVICES_DESC" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BIG_About" EntityType="Self.BIG_About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_AdminAccount" EntityType="Self.BIG_AdminAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_Banners" EntityType="Self.BIG_Banners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_Customer" EntityType="Self.BIG_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_Gallery" EntityType="Self.BIG_Gallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_Personnel" EntityType="Self.BIG_Personnel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_Policy" EntityType="Self.BIG_Policy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIG_Services" EntityType="Self.BIG_Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

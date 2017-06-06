@@ -1,0 +1,10 @@
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\DataModel.dll
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\DataModel.pdb
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\obj\Debug\DataModel.dll
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\obj\Debug\DataModel.pdb
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\DataModel.dll.config
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\EntityFramework.dll
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\EntityFramework.xml
+C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Debug\EntityFramework.SqlServer.xml

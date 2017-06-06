@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BIG_Banners">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="BANNER_IMG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="BANNER_DESCRIPTION" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+    <Property Name="BANNER_HEADER" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="BANNER_SUB_HEADER" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BannerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BIG_Banners" EntityType="Self.BIG_Banners" />
+    <EntitySet Name="BIG_Policy" EntityType="Model.BIG_Policy" />
+    <EntitySet Name="BIG_About" EntityType="Model.BIG_About" />
+    <EntitySet Name="BIG_Personnel" EntityType="Model.BIG_Personnel" />
+    <EntitySet Name="BIG_AdminAccount" EntityType="Model.BIG_AdminAccount" />
+    <EntitySet Name="BIG_Gallery" EntityType="Model.BIG_Gallery" />
+    <EntitySet Name="BIG_Services" EntityType="Model.BIG_Services" />
+    <EntitySet Name="BIG_Customer" EntityType="Model.BIG_Customer" />
+    <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="BIG_Policy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="POLICY" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="VISION" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="OBLIGATION" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="ACTIVITY" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BIG_About">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="WHO_WE_ARE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WHY_US" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IS_EXECUTIVE_INFO" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="AUTHOR" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="EXECUTIVE_INFOMATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BIG_Personnel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PERSONNEL_IMG" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONNEL_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PERSONNEL_POSITION" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BIG_AdminAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BIG_Gallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="GALLERY_IMG" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IMG_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IMG_DESC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BIG_Services">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SERVICES_HEADER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SERVICES_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BIG_Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CUSTOMER_IMG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTOMER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>
