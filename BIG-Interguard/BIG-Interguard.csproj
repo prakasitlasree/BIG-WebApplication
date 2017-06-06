@@ -99,6 +99,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Banner\banner_1.png" />
+    <Content Include="Content\Banner\banner_2.png" />
+    <Content Include="Content\Banner\banner_3.png" />
+    <Content Include="Content\Banner\banner_4.png" />
+    <Content Include="Content\Banner\banner_5.png" />
+    <Content Include="Content\Banner\banner_6.png" />
+    <Content Include="Content\Customer\1.png" />
+    <Content Include="Content\Customer\10.png" />
+    <Content Include="Content\Customer\12.jpg" />
+    <Content Include="Content\Customer\12_11.jpg" />
+    <Content Include="Content\Customer\2.png" />
+    <Content Include="Content\Customer\3.png" />
+    <Content Include="Content\Customer\4.png" />
+    <Content Include="Content\Customer\5.png" />
+    <Content Include="Content\Customer\6.png" />
+    <Content Include="Content\Customer\7.png" />
+    <Content Include="Content\Customer\8.png" />
+    <Content Include="Content\Customer\9.png" />
+    <Content Include="Content\Customer\hj8ke55b5cifajaa8f97f.jpg" />
+    <Content Include="Content\Customer\จี-สตีล.jpg" />
+    <Content Include="Content\Customer\สยามแก๊ส.jpg" />
+    <Content Include="Content\Gallery\10.jpg" />
+    <Content Include="Content\Gallery\11.jpg" />
+    <Content Include="Content\Gallery\12.jpg" />
+    <Content Include="Content\Gallery\13.jpg" />
+    <Content Include="Content\Gallery\4.png" />
+    <Content Include="Content\Gallery\5.png" />
+    <Content Include="Content\Gallery\6.png" />
+    <Content Include="Content\Gallery\7.jpg" />
+    <Content Include="Content\Gallery\9.jpg" />
+    <Content Include="Content\Gallery\ธนกฤต-อินทเจียด.jpg" />
+    <Content Include="Content\Gallery\สอง-ภาสดา.jpg" />
+    <Content Include="Content\Gallery\เทพพิทักษ์-เพ็งมีศรี.jpg" />
     <Content Include="Content\Image\1.jpg" />
     <Content Include="Content\Image\1.png" />
     <Content Include="Content\Image\10.jpg" />
@@ -120,6 +153,12 @@
     <Content Include="Content\Image\logo.png" />
     <Content Include="Content\Image\menu.png" />
     <Content Include="Content\Image\themes.png" />
+    <Content Include="Content\Personnel\1.png" />
+    <Content Include="Content\Personnel\12_11.jpg" />
+    <Content Include="Content\Personnel\2.png" />
+    <Content Include="Content\Personnel\4.png" />
+    <Content Include="Content\Personnel\อนุสรณ์.jpg" />
+    <Content Include="Content\Video\mov_bbb.mp4" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\CSS\bootstrap.css" />

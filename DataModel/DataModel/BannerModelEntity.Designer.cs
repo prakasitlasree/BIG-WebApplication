@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\DataModel\BannerModelEntity.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\DataModel\BannerModelEntity.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

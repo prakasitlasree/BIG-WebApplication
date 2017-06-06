@@ -7,8 +7,8 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="BANNER_IMG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="BANNER_DESCRIPTION" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
-    <Property Name="BANNER_HEADER" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="BANNER_SUB_HEADER" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="BANNER_HEADER" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="BANNER_SUB_HEADER" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
     <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityContainer Name="BannerEntities" annotation:LazyLoadingEnabled="true">
@@ -27,10 +27,10 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="POLICY" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-    <Property Name="VISION" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-    <Property Name="OBLIGATION" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-    <Property Name="ACTIVITY" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="POLICY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OBLIGATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="BIG_About">
     <Key>
@@ -49,8 +49,8 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="PERSONNEL_IMG" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONNEL_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="PERSONNEL_POSITION" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="PERSONNEL_NAME" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="PERSONNEL_POSITION" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
     <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="BIG_AdminAccount">
@@ -86,8 +86,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="CUSTOMER_IMG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="CUSTOMER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTOMER_IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTOMER_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="sysdiagram">

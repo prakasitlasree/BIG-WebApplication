@@ -28,8 +28,8 @@
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="BANNER_IMG" Type="nvarchar" MaxLength="250" />
     <Property Name="BANNER_DESCRIPTION" Type="nchar" MaxLength="300" />
-    <Property Name="BANNER_HEADER" Type="nchar" MaxLength="50" />
-    <Property Name="BANNER_SUB_HEADER" Type="nchar" MaxLength="50" />
+    <Property Name="BANNER_HEADER" Type="nchar" MaxLength="255" />
+    <Property Name="BANNER_SUB_HEADER" Type="nchar" MaxLength="255" />
     <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="BIG_Customer">
@@ -37,8 +37,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="CUSTOMER_IMG" Type="nvarchar" MaxLength="200" />
-    <Property Name="CUSTOMER_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CUSTOMER_IMG" Type="nvarchar" MaxLength="100" />
+    <Property Name="CUSTOMER_NAME" Type="nvarchar" MaxLength="255" />
     <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="BIG_Gallery">
@@ -57,8 +57,8 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="PERSONNEL_IMG" Type="nvarchar" MaxLength="255" />
-    <Property Name="PERSONNEL_NAME" Type="nchar" MaxLength="50" />
-    <Property Name="PERSONNEL_POSITION" Type="nchar" MaxLength="50" />
+    <Property Name="PERSONNEL_NAME" Type="nchar" MaxLength="255" />
+    <Property Name="PERSONNEL_POSITION" Type="nchar" MaxLength="255" />
     <Property Name="IS_ACTIVE" Type="nchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="BIG_Policy">
@@ -66,10 +66,10 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="POLICY" Type="nchar" MaxLength="255" />
-    <Property Name="VISION" Type="nchar" MaxLength="255" />
-    <Property Name="OBLIGATION" Type="nchar" MaxLength="255" />
-    <Property Name="ACTIVITY" Type="nchar" MaxLength="255" />
+    <Property Name="POLICY" Type="ntext" />
+    <Property Name="VISION" Type="ntext" />
+    <Property Name="OBLIGATION" Type="ntext" />
+    <Property Name="ACTIVITY" Type="ntext" />
   </EntityType>
   <EntityType Name="BIG_Services">
     <Key>

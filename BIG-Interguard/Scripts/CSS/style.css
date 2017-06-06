@@ -544,7 +544,7 @@ top: 9%;
 /*-- //banner --*/
 /*-- banner-bottom --*/
 .new-bottom{
-	padding-top:90px;
+	padding-top:70px;
     padding-bottom:20px;
 	background: #f7f7f7;
 	}
@@ -1607,8 +1607,7 @@ float:right;
 		width:48%;
 		}
 		.col-md-3.bottom-grid {
-		float: left;
-		width: 33.3%;
+		
 		}
 	
 		.about-grids {
@@ -1805,23 +1804,23 @@ float:right;
 		.banner-info {
 		width: 53%;
 		}
-		.bottom-left {
+		/*.bottom-left {
 		float: left;
 		width: 23%;
-		}
-		.bottom-right {
+		}*/
+		/*.bottom-right {
 		float: right;
 		width: 76%;
-		}
-		.bottom-right h3 {
+		}*/
+		/*.bottom-right h3 {
 		font-size: 14px;
 		  overflow: hidden;
 		  height: 17px;
-		}
-		.bottom-right p {
+		}*/
+		/*.bottom-right p {
 		overflow: hidden;
 		height: 57px;
-		}
+		}*/
 		.about-grid h3 {
 		font-size: 18px;
 		margin: 0 0 12px 0;
@@ -1970,8 +1969,7 @@ float:right;
 		
 		}
 		.col-md-3.bottom-grid {
-		float: left;
-		width: 50%;
+	
 		}
 		.col-md-4.about-grid {
 		float: left;
@@ -2112,17 +2110,16 @@ float:right;
 		margin: 0 auto;
 		}
 		.col-md-3.bottom-grid {
-		width: 100%;
-		margin-bottom: 15px;
+		
 		}
-		.bottom-left {
+		/*.bottom-left {
 		float: left;
 		width: 20%;
 		}
 		.bottom-right {
 		float: right;
 		width: 78%;
-		}
+		}*/
 		.callbacks_nav {
 		  top: 109%;
 		height: 28px;

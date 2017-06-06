@@ -13,15 +13,21 @@ namespace DataModel
     {
         public List<BIG_Banners> SelectBanners()
         {
-            using (var context = new BannerEntities())
+            try
             {
-                var ptx = (from r in context.BIG_Banners select r).ToList();
+                using (var context = new BannerEntities())
+                {
+                    var ptx = context.BIG_Banners.ToList(); // (from r in context.BIG_Banners select r).ToList();
 
-                return ptx;
+                    return ptx;
 
+                }
             }
+            catch (Exception ex)
+            {
 
-
+                throw ex;
+            } 
         }
         public BIG_Policy SelectPolicy()
         {
