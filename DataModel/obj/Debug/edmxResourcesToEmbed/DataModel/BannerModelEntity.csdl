@@ -16,11 +16,11 @@
     <EntitySet Name="BIG_Policy" EntityType="Model.BIG_Policy" />
     <EntitySet Name="BIG_About" EntityType="Model.BIG_About" />
     <EntitySet Name="BIG_Personnel" EntityType="Model.BIG_Personnel" />
-    <EntitySet Name="BIG_AdminAccount" EntityType="Model.BIG_AdminAccount" />
     <EntitySet Name="BIG_Gallery" EntityType="Model.BIG_Gallery" />
     <EntitySet Name="BIG_Services" EntityType="Model.BIG_Services" />
     <EntitySet Name="BIG_Customer" EntityType="Model.BIG_Customer" />
     <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagram" />
+    <EntitySet Name="BIG_AdminAccount" EntityType="Model.BIG_AdminAccount" />
   </EntityContainer>
   <EntityType Name="BIG_Policy">
     <Key>
@@ -52,16 +52,6 @@
     <Property Name="PERSONNEL_NAME" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
     <Property Name="PERSONNEL_POSITION" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
     <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
-  </EntityType>
-  <EntityType Name="BIG_AdminAccount">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="ACCOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
-    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="BIG_Gallery">
     <Key>
@@ -99,5 +89,15 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BIG_AdminAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

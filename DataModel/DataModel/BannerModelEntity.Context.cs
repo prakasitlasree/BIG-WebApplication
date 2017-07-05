@@ -29,10 +29,10 @@ namespace DataModel.DataModel
         public virtual DbSet<BIG_Policy> BIG_Policy { get; set; }
         public virtual DbSet<BIG_About> BIG_About { get; set; }
         public virtual DbSet<BIG_Personnel> BIG_Personnel { get; set; }
-        public virtual DbSet<BIG_AdminAccount> BIG_AdminAccount { get; set; }
         public virtual DbSet<BIG_Gallery> BIG_Gallery { get; set; }
         public virtual DbSet<BIG_Services> BIG_Services { get; set; }
         public virtual DbSet<BIG_Customer> BIG_Customer { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<BIG_AdminAccount> BIG_AdminAccount { get; set; }
     }
 }
