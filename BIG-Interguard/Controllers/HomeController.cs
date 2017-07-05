@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using DataModel;
 using System.Net.Mail;
 using System.Text;
+using System.Net;
 
 namespace BIG_Interguard.Controllers
 {
@@ -30,13 +31,13 @@ namespace BIG_Interguard.Controllers
 
 
             };
-        
+
             return View(indexContent);
         }
 
         public ActionResult Admin()
         {
-            if(Session["Admin"] == null)
+            if (Session["Admin"] == null)
             {
                 return RedirectToAction("Login");
             }
@@ -46,12 +47,12 @@ namespace BIG_Interguard.Controllers
                 return View();
 
             }
-          
+
         }
 
         public ActionResult Login(LoginModel account)
         {
-            if(Session["Admin"] != null)
+            if (Session["Admin"] != null)
             {
                 return RedirectToAction("Admin");
             }
@@ -59,7 +60,7 @@ namespace BIG_Interguard.Controllers
             LoginModel resultLogin = new LoginModel();
             if (Session["Admin"] == null && account.ADMIN_ID != null && account.PASSWORD != null)
             {
-             
+
                 if (entityService.SelectAdminAccount(account.ADMIN_ID, account.PASSWORD))
                 {
                     Session["Admin"] = account.ADMIN_ID;
@@ -78,7 +79,7 @@ namespace BIG_Interguard.Controllers
             }
 
 
-           
+
         }
         public ActionResult LogOut()
         {
@@ -105,20 +106,22 @@ namespace BIG_Interguard.Controllers
                 string to = mailTo.ACCOUNT;
 
                 MailMessage msg = new MailMessage(from, to);
-                string[] monthTH =new string[] { "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม" };
+                string[] monthTH = new string[] { "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม" };
                 int day = DateTime.Now.Day;
-                int monthIndex = DateTime.Now.Month-1;
+                int monthIndex = DateTime.Now.Month - 1;
                 int year = DateTime.Now.Year + 543;
 
-                msg.Subject = "ขอใบเสนอราคา ณ วันที่ " +day+" "+monthTH[monthIndex]+" "+year;
+                msg.Subject = "ขอใบเสนอราคา ณ วันที่ " + day + " " + monthTH[monthIndex] + " " + year;
 
                 StringBuilder detail = new StringBuilder();
-                detail.AppendLine("ชื่อ : "+dataInput.NAME);
+                detail.AppendLine("ชื่อ : " + dataInput.NAME);
                 detail.AppendLine("ตำแหน่ง : " + dataInput.POSITION);
                 detail.AppendLine("บริษัท : " + dataInput.COMPANY);
                 detail.AppendLine("เบอร์ติดต่อ : " + dataInput.NUMBER);
                 detail.AppendLine("อีเมล์ : " + dataInput.EMAIL);
                 detail.AppendLine("รายละเอียด : " + dataInput.DESC);
+                detail.AppendLine("");
+                detail.AppendLine("ส่งจาก : " + GetIPAddress()); 
 
                 msg.Body = detail.ToString();
 
@@ -138,7 +141,23 @@ namespace BIG_Interguard.Controllers
             return Json(result);
         }
 
+        private string GetIPAddress()
+        {
+            var result = "";
+            IPHostEntry Host = default(IPHostEntry);
+            string Hostname = null;
+            Hostname = System.Environment.MachineName;
+            Host = Dns.GetHostEntry(Hostname);
+            foreach (IPAddress IP in Host.AddressList)
+            {
+                if (IP.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    result = Convert.ToString(IP);
+                }
+            }
+            return result;
 
+        }
 
 
     }
