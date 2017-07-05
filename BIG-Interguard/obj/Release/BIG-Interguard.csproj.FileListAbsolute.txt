@@ -37,3 +37,42 @@ C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\BIG-Interguard\bin\System.W
 C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\BIG-Interguard\obj\Release\BIG-Interguard.csprojResolveAssemblyReference.cache
 C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\BIG-Interguard\obj\Release\BIG-Interguard.dll
 C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\BIG-Interguard\obj\Release\BIG-Interguard.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\csc.exe
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\System.Collections.Immutable.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\System.Reflection.Metadata.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\vbc.exe
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\VBCSCompiler.exe
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\roslyn\VBCSCompiler.exe.config
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\BIG-Interguard.dll.config
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\BIG-Interguard.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\BIG-Interguard.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\DataModel.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\EntityFramework.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\EntityFramework.SqlServer.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\Microsoft.Web.Infrastructure.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Helpers.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Mvc.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Razor.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Webpages.Deployment.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Webpages.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Webpages.Razor.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\DataModel.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\EntityFramework.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\EntityFramework.SqlServer.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Razor.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Webpages.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Webpages.Deployment.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Webpages.Razor.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Helpers.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\bin\System.Web.Mvc.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\obj\Release\BIG-Interguard.csprojResolveAssemblyReference.cache
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\obj\Release\BIG-Interguard.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\BIG-Interguard\obj\Release\BIG-Interguard.pdb

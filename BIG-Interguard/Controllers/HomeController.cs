@@ -95,41 +95,51 @@ namespace BIG_Interguard.Controllers
             ResultTransactionModel result = new ResultTransactionModel();
             try
             {
-                SmtpClient mailServer = new SmtpClient("smtp.gmail.com", 587);
-                mailServer.EnableSsl = true;
-                mailServer.UseDefaultCredentials = false;
-                mailServer.Credentials = new System.Net.NetworkCredential("biginterguard.website@gmail.com", "bigadmin");
-                var mailTo = entityAdminService.SelectEmail();
+                if (!string.IsNullOrWhiteSpace(dataInput.NAME) || !string.IsNullOrWhiteSpace(dataInput.POSITION) 
+                    || !string.IsNullOrWhiteSpace(dataInput.COMPANY) || !string.IsNullOrWhiteSpace(dataInput.NUMBER)
+                    || !string.IsNullOrWhiteSpace(dataInput.EMAIL) || !string.IsNullOrWhiteSpace(dataInput.DESC))
+                { 
+                    SmtpClient mailServer = new SmtpClient("smtp.gmail.com", 587);
+                    mailServer.EnableSsl = true;
+                    mailServer.UseDefaultCredentials = false;
+                    mailServer.Credentials = new System.Net.NetworkCredential("biginterguard.website@gmail.com", "bigadmin");
+                    var mailTo = entityAdminService.SelectEmail();
 
-                string from = "biginterguard.website@gmail.com";
+                    string from = "biginterguard.website@gmail.com";
 
-                string to = mailTo.ACCOUNT;
+                    string to = mailTo.ACCOUNT;
+                    string[] toArray = to.Split(',');
+                    foreach (var item in toArray)
+                    {
+                        MailMessage msg = new MailMessage(from, item);
+                        string[] monthTH = new string[] { "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม" };
+                        int day = DateTime.Now.Day;
+                        int monthIndex = DateTime.Now.Month - 1;
+                        int year = DateTime.Now.Year + 543;
 
-                MailMessage msg = new MailMessage(from, to);
-                string[] monthTH = new string[] { "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม" };
-                int day = DateTime.Now.Day;
-                int monthIndex = DateTime.Now.Month - 1;
-                int year = DateTime.Now.Year + 543;
+                        msg.Subject = "ขอใบเสนอราคา ณ วันที่ " + day + " " + monthTH[monthIndex] + " " + year;
+                         
+                        StringBuilder detail = new StringBuilder();
+                        detail.AppendLine("ชื่อ : " + dataInput.NAME);
+                        detail.AppendLine("ตำแหน่ง : " + dataInput.POSITION);
+                        detail.AppendLine("บริษัท : " + dataInput.COMPANY);
+                        detail.AppendLine("เบอร์ติดต่อ : " + dataInput.NUMBER);
+                        detail.AppendLine("อีเมล์ : " + dataInput.EMAIL);
+                        detail.AppendLine("รายละเอียด : " + dataInput.DESC);
+                        detail.AppendLine("");
+                        detail.AppendLine("ส่งจาก IP Address: " + GetIPAddress());
 
-                msg.Subject = "ขอใบเสนอราคา ณ วันที่ " + day + " " + monthTH[monthIndex] + " " + year;
-
-                StringBuilder detail = new StringBuilder();
-                detail.AppendLine("ชื่อ : " + dataInput.NAME);
-                detail.AppendLine("ตำแหน่ง : " + dataInput.POSITION);
-                detail.AppendLine("บริษัท : " + dataInput.COMPANY);
-                detail.AppendLine("เบอร์ติดต่อ : " + dataInput.NUMBER);
-                detail.AppendLine("อีเมล์ : " + dataInput.EMAIL);
-                detail.AppendLine("รายละเอียด : " + dataInput.DESC);
-                detail.AppendLine("");
-                detail.AppendLine("ส่งจาก : " + GetIPAddress()); 
-
-                msg.Body = detail.ToString();
-
-                mailServer.Send(msg);
-
-                result.STATUS = true;
-                result.MESSAGE = "ส่งคำร้องเรียบร้อยแล้ว ขอบคุณที่ใช้บริการ";
-
+                        msg.Body = detail.ToString();
+                        mailServer.Send(msg);
+                    }
+                    result.STATUS = true;
+                    result.MESSAGE = "ส่งคำร้องเรียบร้อยแล้ว ขอบคุณที่ใช้บริการ";
+                }
+                else
+                {
+                    result.STATUS = false;
+                    result.MESSAGE = "กรุณากรอกข้อมูลให้ครบ";
+                }
             }
             catch (Exception ex)
             {
@@ -157,8 +167,7 @@ namespace BIG_Interguard.Controllers
             }
             return result;
 
-        }
-
+        } 
 
     }
 }

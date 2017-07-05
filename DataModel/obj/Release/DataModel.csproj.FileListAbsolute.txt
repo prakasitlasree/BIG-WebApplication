@@ -8,3 +8,13 @@ C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\bin\Release\Entit
 C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\obj\Release\DataModel.csprojResolveAssemblyReference.cache
 C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\obj\Release\DataModel.dll
 C:\Users\Jebaited\Desktop\BIG-Website\BIG-Interguard\DataModel\obj\Release\DataModel.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\DataModel.dll.config
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\DataModel.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\DataModel.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\EntityFramework.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\EntityFramework.SqlServer.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\EntityFramework.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Release\EntityFramework.SqlServer.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\obj\Release\DataModel.csprojResolveAssemblyReference.cache
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\obj\Release\DataModel.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\obj\Release\DataModel.pdb

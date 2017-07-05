@@ -181,17 +181,47 @@
 <div id="team" class="team">
     <div class="container">
         <div class="team-header">
-            <h2>รายนามผู้บริหารและบุคลากร</h2>
+            <h2>รายนามผู้บริหาร</h2>
         </div>
         <div class="work-bottom">
-            <div class="team-grid" style="height:auto;text-align:center;background:none;padding-top:20px">
+            @*<div class="team-grid" style="height:auto;text-align:center;background:none;padding-top:20px">
 
                 <img style="width:auto;background:white;padding:15px" src="@Model.PersonnelList[0].PERSONNEL_IMG" alt="" />
                 <h3 style="width:auto">@Model.PersonnelList[0].PERSONNEL_NAME</h3>
                 <p style="width:auto">@Model.PersonnelList[0].PERSONNEL_POSITION</p>
 
-            </div>
-            <ul id="flexiselDemo1">
+            </div>*@
+            <center>
+                @try
+                {
+                    int count = 0;
+                    foreach (var item in Model.PersonnelList)
+                    {
+                        count++;
+                        if (count < 4 )
+                        {
+                            if(count == 5)
+                            {
+                                break;
+                            }
+                            <div style="display:inline-block;width:auto;padding:20px">
+                                <img style="width:auto;background:white;padding:15px;display:inline-block" src="@item.PERSONNEL_IMG" alt="" />
+                                <h3 style="width:auto">@item.PERSONNEL_NAME</h3>
+                                <p style="width:auto">@item.PERSONNEL_POSITION</p>
+                            </div>
+                        }
+                      
+
+                    }
+                }
+                catch { }
+
+
+                </center>
+
+
+
+                    @*<ul id="flexiselDemo1">
                 @{int count = 0; }}
                 @foreach (var item in Model.PersonnelList)
                 {
@@ -208,38 +238,38 @@
                     }
                 }
 
-            </ul>
+            </ul>*@
 
 
-            <script type="text/javascript">
-                $(window).load(function () {
-                    $("#flexiselDemo1").flexisel({
-                        visibleItems: 4,
-                        animationSpeed: 1000,
-                        autoPlay: true,
-                        autoPlaySpeed: 5000,
-                        pauseOnHover: true,
-                        enableResponsiveBreakpoints: true,
-                        responsiveBreakpoints: {
-                            portrait: {
-                                changePoint: 480,
-                                visibleItems: 1
-                            },
-                            landscape: {
-                                changePoint: 640,
-                                visibleItems: 2
-                            },
-                            tablet: {
-                                changePoint: 768,
-                                visibleItems: 3
-                            }
-                        }
-                    });
+                    <script type="text/javascript">
+                        //$(window).load(function () {
+                        //    $("#flexiselDemo1").flexisel({
+                        //        visibleItems: 3,
+                        //        animationSpeed: 1000,
+                        //        autoPlay: false,
+                        //        autoPlaySpeed: 5000,
+                        //        pauseOnHover: true,
+                        //        enableResponsiveBreakpoints: true,
+                        //        responsiveBreakpoints: {
+                        //            portrait: {
+                        //                changePoint: 480,
+                        //                visibleItems: 1
+                        //            },
+                        //            landscape: {
+                        //                changePoint: 640,
+                        //                visibleItems: 2
+                        //            },
+                        //            tablet: {
+                        //                changePoint: 768,
+                        //                visibleItems: 3
+                        //            }
+                        //        }
+                        //    });
 
-                });
-            </script>
+                        //});
+                    </script>
 
-        </div>
+</div>
     </div>
 </div>
 <div id="gallery" class="team">
@@ -452,7 +482,10 @@
                 <p><span style="color:indianred">088-0991466</span>  คุณณัฐพร  เกตุแก้ว</p>
             </div>
             <div style="padding-bottom:20px">
-                QR CODE
+                <div style="display:inline-block"><img src="~/Content/Image/QR LINE KRATUMBAN.jpg" /><p style="text-align:center;padding:5px">สาขากระทุ่มแบน</p></div>
+     
+                <div style="display:inline-block"><img src="~/Content/Image/QR LINE NONTABURI.jpg" /><p style="text-align:center;padding:5px">สาขานนทบุรี</p></div>
+            
             </div>
                 
             </div>
@@ -485,7 +518,7 @@
  
             <div class="col-md-6 services-grid">
                 <h3>สาขากระทุ่มแบน</h3>
-                <p style="height:auto"><span> บริษัทรักษาความปลอดภัย  บี.ไอ.จี.อินเตอร์การ์ด  จำกัด ( สำนักงานใหญ่ ) <br /></span><label>สำนักงานเลขที่ 179/18 </label> ถนนสุคนธวิท ตำบลตลาดกระทุ่มแบน อำเภอกระทุ่มแบน จังหวัดสมุทรสาคร  74110</p>
+                <p style="height:auto"><span> บริษัทรักษาความปลอดภัย  บี.ไอ.จี.อินเตอร์การ์ด  จำกัด ( สำนักงานใหญ่ ) <br /></span><label>สำนักงานเลขที่ 179/18 </label> ถนนสุคนธวิท ตำบลตลาดกระทุ่มแบน อำเภอกระทุ่มแบน สมุทรสาคร  74110</p>
                 <ul style="margin-top:30px">
                     <li>โทรศัพท์ 0-3447-2312 </li>
                     <li>โทรศัพท์ 0-3447-3525 </li>
@@ -497,7 +530,7 @@
             </div>
             <div class="col-md-6 services-grid">
                 <h3>สาขานนทบุรี</h3>
-                <p style="height:auto"><span>บริษัทรักษาความปลอดภัย  บี.ไอ.จี. อินเตอร์ เซฟการ์ด กรุ๊ป จำกัด ( สำนักงานจังหวัดนนทบุรี ) <br /></span><label>สำนักงานเลขที่ 81 </label> หมู่ที่ 5 ตำบลละหาร อำเภอบางบัวทอง จังหวัดนนทบุรี 11110</p>
+                <p style="height:auto"><span>บริษัทรักษาความปลอดภัย  บี.ไอ.จี. อินเตอร์ เซฟการ์ด กรุ๊ป จำกัด ( สำนักงานจังหวัดนนทบุรี ) <br /></span><label>สำนักงานเลขที่ 81 </label> หมู่ที่ 5 ตำบลละหาร อำเภอบางบัวทอง นนทบุรี 11110</p>
                 <ul style="margin-top:30px">
                     <li>โทรศัพท์ 0-2571-4342 </li>
                     <li>โทรศัพท์ 0-2571-4343 </li>
@@ -521,25 +554,19 @@
     $('#loadingSign').hide();
 
         //temporary hide
-    $('#gallery').hide();
+    //$('#gallery').hide();
     $('#video').hide();
 
 
-    $('.hover').mouseover(function () {
-        $('.text').css("visibility", "visible");
-    });
-
-    $('.hover').mouseout(function () {
-        $('.text').css("visibility", "hidden");
-    });
-
+  
 
 
     
     });
 
     function sendEmail() {
-        if ($('#nameCustomer').val() != "" && $('#emailCustomer').val() != "" && $('#numberCustomer').val() != "" && $('#descCustomer').val() != "" && $('#companyCustomer').val() != "" && $('#positionCustomer').val() != "") {
+        if ($('#nameCustomer').val() != "" && $('#emailCustomer').val() != "" && $('#numberCustomer').val() != "" && $('#descCustomer').val() != "" && $('#companyCustomer').val() != "" && $('#positionCustomer').val() != "")
+        {
 
             $('#submitEmail').hide();
             $('#loadingSign').show();
@@ -564,10 +591,25 @@
                         alert(json.MESSAGE);
                         $('#submitEmail').show();
                         $('#loadingSign').hide();
+
+                        $('#nameCustomer').val('');
+                        $('#positionCustomer').val('');
+                        $('#companyCustomer').val('');
+                        $('#emailCustomer').val('');
+                       $('#numberCustomer').val('');
+                        $('#descCustomer').val('');
+
+
                     } else {
                         alert(json.MESSAGE);
                         $('#submitEmail').show();
                         $('#loadingSign').hide();
+                        $('#nameCustomer').val('');
+                        $('#positionCustomer').val('');
+                        $('#companyCustomer').val('');
+                        $('#emailCustomer').val('');
+                        $('#numberCustomer').val('');
+                        $('#descCustomer').val('');
                     }
                 }
             });
