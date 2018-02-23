@@ -1410,7 +1410,7 @@ float:right;
 		padding: 14px;
 	}
 	.banner{
-	min-height: 374px;
+	min-height: 100%;
 	}
 	.banner-info {
 		margin: 112px 0 0 180px;
@@ -2139,7 +2139,7 @@ float:right;
 		  height: 32px;
 		}
 		.banner {
-		  min-height: 163px;
+		  min-height: 100%;
 		}
 		.banner-info  {
 		  width: 55%;

@@ -28,7 +28,7 @@
                     <div class="banner">
                         <div class="imageBanner">
 
-                            <img src="@item.BANNER_IMG" class="banner" alt="" />
+                            <img src="@item.BANNER_IMG" class="img-responsive" alt="" />
 
                             <h2 style="background-color:rgba(255, 255, 255, 0.4);line-height: 30px;padding:10px;color:white;text-shadow: 2px 2px #808080;" class="imageBanner"><b>@item.BANNER_HEADER</b><br />@item.BANNER_SUB_HEADER<br /><i style="font-size:13px">@item.BANNER_DESCRIPTION</i> </h2>
 
@@ -565,8 +565,7 @@
     });
 
     function sendEmail() {
-        if ($('#nameCustomer').val() != "" && $('#emailCustomer').val() != "" && $('#numberCustomer').val() != "" && $('#descCustomer').val() != "" && $('#companyCustomer').val() != "" && $('#positionCustomer').val() != "")
-        {
+        if ($('#nameCustomer').val().trim() != "" && $('#emailCustomer').val().trim() != "" && $('#numberCustomer').val().trim() != "" && $('#descCustomer').val().trim() != "" && $('#companyCustomer').val().trim() != "" && $('#positionCustomer').val().trim() != "") {
 
             $('#submitEmail').hide();
             $('#loadingSign').show();

@@ -18,3 +18,13 @@ D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\bin\Debug\EntityFramework.SqlSer
 D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\obj\Debug\DataModel.dll
 D:\_zBIG\BIG WEB App\SourceFromGitHub\DataModel\obj\Debug\DataModel.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\DataModel.dll.config
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\DataModel.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\DataModel.pdb
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\EntityFramework.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\EntityFramework.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\obj\Debug\DataModel.dll
+D:\_zBIG\BIG WEB App\SourceFromGitHub2018\DataModel\obj\Debug\DataModel.pdb
